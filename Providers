@@ -1,0 +1,7 @@
+PROVIDERS = {
+    "Telus": {"sms": "msg.telus.com", "mms": "mms.mb.telus.com"},
+    "Bell": {"sms": "txt.bell.ca"}, # Unknown
+    "Rogers": {"sms": "pcs.rogers.com", "mms": "mms.rogers.com"}, #doesnt support sms
+    "Public Mobile": {"sms": "msg.telus.com", "mms": "mms.mb.telus.com"}, 
+    "Koodo": {"sms": "msg.koodomobile.com"}, #doesnt work
+}
