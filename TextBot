@@ -1,4 +1,4 @@
-#passkey "" enter passkey here for memory
+# place passkey here for memory
 import email, smtplib, ssl, json
 from PROVIDERS import PROVIDERS
 import time
@@ -20,12 +20,12 @@ def send_sms_via_email(
     message: str,
     provider: str,
     sender_credentials: tuple,
-    subject: str = " ",
+    subject: str = " ", # insert subject
     smtp_server: str = "smtp.gmail.com",
     smtp_port: int = 465,
 ):
     sender_email, email_password = sender_credentials
-    receiver_email = f'{number}@{PROVIDERS.get(provider).get("sms")}'
+    receiver_email = f'{number}@{PROVIDERS.get(provider).get("sms")}' # sms
 
     email_message = f"Subject:{subject}\nTo:{receiver_email}\n{message}"
 
@@ -49,7 +49,7 @@ def send_mms_via_email(
     smtp_port: int = 465,
 ):
     sender_email, email_password = sender_credentials
-    receiver_email = f'{number}@{PROVIDERS.get(provider).get("mms")}' #change between sms and mms
+    receiver_email = f'{number}@{PROVIDERS.get(provider).get("mms")}' # mms
 
     email_message = MIMEMultipart()
     email_message["Subject"] = subject
@@ -81,7 +81,7 @@ def main():
     message = "" #insert message
     provider = "" #insert message from PROVIDERS.py
     sender_credentials = ("", "") #input (email, emailtosms passkey) which can be found on your google account
-    file_path = "" #insert image
+    file_path = "" #insert image for mms
     mime_maintype = "image"
     mime_subtype = "" #give classification, ex. png, jpg
     # comment out to switch between mms and sms
@@ -90,6 +90,7 @@ def main():
 
 
 #loop for time
+'''
 if __name__ == "__main__":
     while loop == True:
         # time variables
@@ -105,3 +106,4 @@ if __name__ == "__main__":
                 time.sleep(1)
                 if n <= 0:
                     print (currentTime)
+                    '''
